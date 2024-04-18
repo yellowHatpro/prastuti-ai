@@ -1,8 +1,9 @@
 import {SparklesCore} from "@/components/ui/sparkles";
+import SubmitPrompt from "@/components/ui/submit-prompt";
 
 export default function Home() {
   return (
-      <main className="flex min-h-screen h-screen flex-col items-center justify-between p-24">
+      <main className="flex min-h-screen h-screen flex-col items-center justify-between p-24 text-black">
           <h1>We have an AI that creates PPT for you</h1>
           <h1 className="md:text-7xl text-3xl lg:text-6xl font-bold text-center relative z-20">
               Prastuti.ai
@@ -17,10 +18,11 @@ export default function Home() {
               <div
                   className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4"/>
           </div>
+          <SubmitPrompt className={""}/>
           <div className="w-full absolute inset-0 h-screen">
               <SparklesCore
                   id="tsparticlesfullpage"
-                  background="transparent"
+                  background={"transparent"}
                   minSize={0.6}
                   maxSize={1.4}
                   particleDensity={100}
