@@ -1,9 +1,9 @@
 export type Presentation = {
 	"Intro Title": string;
 	"Intro Subtitle": string;
-	arr_sildes: PresentationArr_sildes[];
+	arr_slides: PresentationArr_slides[];
 }
-export type PresentationArr_sildes = {
+export type PresentationArr_slides = {
 	id: string;
 	Heading: string;
 	Content: string[];

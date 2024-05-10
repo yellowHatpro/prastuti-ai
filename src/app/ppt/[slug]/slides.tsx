@@ -6,23 +6,35 @@ import {
     CarouselNext,
     CarouselPrevious
 } from "@/components/ui/carousel";
-import {PresentationArr_sildes} from "@/app/types/presentation";
+import {PresentationArr_slides} from "@/app/types/presentation";
+import {Margin, usePDF} from "react-to-pdf";
+import {Button} from "@/components/ui/button";
+import {DownloadIcon} from "@radix-ui/react-icons";
 
-export default function SlidesPage({slides}: {slides: PresentationArr_sildes[]}) {
+export default function SlidesPage({slides}: {slides: PresentationArr_slides[]}) {
+    const { toPDF, targetRef } = usePDF({
+        method: "save",
+        filename: `prastuti.pdf`,
+        page: { margin: Margin.LARGE },
+    });
+
     return (
-        <section className={"h-screen w-full min-w-full flex flex-col justify-center items-center"}>
-            <Carousel className="w-full max-w-[1000px] border rounded-md p-4">
-                <CarouselContent>
+        <section className={"h-full w-full min-w-full flex flex-col justify-center items-center"}>
+            <Button className={"bg-red-100"} onClick={()=>toPDF}>
+                Download PDF
+            </Button>
+            <Carousel ref={targetRef} className="w-[1400px] m-2 max-w-[1400px] border border-black rounded-md p-4">
+                <CarouselContent >
                     {slides.map((slide, index) => (
                         <CarouselItem key={index}>
                             <div className="p-1">
-                                <h2 className={"scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0"}>
+                                <h2 className={"scroll-m-20 border-b pb-2 text-5xl font-semibold tracking-tight first:mt-0"}>
                                     {slide.Heading}
                                 </h2>
-                                <ul className={"my-6 ml-6 list-disc [&>li]:mt-2"}>
+                                <ul className={"my-6 ml-6 list-disc [&>li]:m-12"}>
                                     {slide.Content.map((content, index) => {
                                         return (
-                                            <li key={index}>
+                                            <li className={"text-3xl"} key={index}>
                                                 {content}
                                             </li>
                                         )
