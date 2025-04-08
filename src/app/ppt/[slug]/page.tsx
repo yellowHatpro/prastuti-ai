@@ -11,10 +11,14 @@ export default async function PptPage({ params }: PptParams) {
   return (
     <section
       className={
-        "p-4 w-full h-full flex flex-col justify-center items-center bg-[#f9f5d7]"
+        "p-4 w-full h-screen flex flex-col justify-center items-center bg-[#f9f5d7]"
       }
     >
-      <h1 className={"text-4xl font-extrabold tracking-tight lg:text-5xl"}>
+      <h1
+        className={
+          "md:text-4xl text-2xl font-extrabold tracking-tight lg:text-5xl"
+        }
+      >
         {data["Intro Title"]}
       </h1>
       <h1

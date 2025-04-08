@@ -31,7 +31,7 @@ export const createPPT = async (prompt: string) => {
                 {
                     "id": "...",
                     "Heading": "...",
-                    "Content": ["...", "...", "...", "...", "..."]
+                    "Content": ["...", "...", "...", "...", "..."],
                 },
                 ...
             ],
